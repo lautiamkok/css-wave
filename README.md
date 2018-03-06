@@ -3,9 +3,9 @@ CSS Wave
 
 > Creating a "wave" effect with CSS.
 
-Read the post [here](https://www.codementor.io/lautiamkok/...) about this repository.
+Read the post [here](https://www.codementor.io/lautiamkok/creating-a-wave-effect-with-css-hd0suudr0) about this repository.
 
-Hosted at [https://lautiamkok.github.io/css-wave/](https://lautiamkok.github.io/css-wave/)
+Hosted at [https://lautiamkok.github.io/css-wave/](https://lautiamkok.github.io/css-wave/index.html)
 
 Quick start
 =============
