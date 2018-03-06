@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=500" />
+    <meta name="author" content="" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>CSS Wave Effect</title>
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600|Vollkorn:400,400i,700,700i" rel="stylesheet">
+
+    <!-- CSS bundle -->
+    <link href="dist/bundle.min.css" rel="stylesheet">
+
+    <!-- JS bundle -->
+    <script src="dist/bundle.min.js"></script>
+
+    <link href="favico-16.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+
+<main>
+
+    <!-- vue template -->
+    <div id="vue-specimen">
+
+        <br/>
+        <br/>
+        <div class="grid-container text-center">
+            <p>--- Option 1 ----</p>
+        </div>
+        <br/>
+        <br/>
+
+        <!-- vue - loop -->
+        <!-- https://laracasts.com/discuss/channels/vue/use-v-for-without-wrapping-element -->
+        <template v-for="item in items">
+
+            <div class="row row-scale" data-aos="fade-up">
+                <div class="grid-container">
+                    <div class="grid-x grid-padding-x grid-items">
+
+                        <!-- loop specimens in each item -->
+                        <template v-for="(specimen, index) in item">
+                        <div class="large-3 cell cell-item text-center">
+                            <a href="#">
+                                <img :src="specimen.image_src" :alt="specimen.image_alt">
+                            </a>
+                            <h2 class="heading-specimen">{{ specimen.title }}</h2>
+                        </div>
+                        </template>
+                        <!-- loop specimen in each item -->
+
+                    </div>
+                </div>
+            </div>
+
+        </template>
+        <!-- vue - loop -->
+
+        <!-- without Vue -->
+        <!-- <div class="row row-scale" data-aos="fade-up">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x grid-items">
+
+                    <div class="large-3 cell cell-item text-center">
+                        <a href="#">
+                            <img src="dist/images/03.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">BRYAN VON HOLST LOGO</h2>
+                    </div>
+
+                    <div class="large-3 cell cell-item text-center">
+                        <a href="#">
+                            <img src="dist/images/04.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">MAGICIAN CUSTOM TYPE</h2>
+                    </div>
+
+                    <div class="large-3 cell cell-item text-center">
+                        <a href="#">
+                            <img src="dist/images/05.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">SS GREAT BRITAIN LOGO</h2>
+                    </div>
+
+                    <div class="large-3 cell cell-item text-center">
+                        <a href="#">
+                            <img src="dist/images/04.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">QM MONOGRAM</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-scale" data-aos="fade-up">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x grid-items">
+
+                    <div class="large-3 cell cell-item text-center">
+                        <a href="#">
+                            <img src="dist/images/00.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">BRYAN VON HOLST LOGO</h2>
+                    </div>
+
+                    <div class="large-3 cell cell-item text-center">
+                        <a href="#">
+                            <img src="dist/images/01.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">MAGICIAN CUSTOM TYPE</h2>
+                    </div>
+
+                    <div class="large-3 cell cell-item text-center">
+                        <a href="#">
+                            <img src="dist/images/02.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">SS GREAT BRITAIN LOGO</h2>
+                    </div>
+
+                    <div class="large-3 cell cell-item text-center">
+                        <a href="#">
+                            <img src="dist/images/03.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">QM MONOGRAM</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-scale" data-aos="fade-up">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x grid-items">
+
+                    <div class="large-3 cell cell-item text-center">
+                        <a href="#">
+                            <img src="dist/images/03.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">BRYAN VON HOLST LOGO</h2>
+                    </div>
+
+                    <div class="large-3 cell cell-item text-center">
+                        <a href="#">
+                            <img src="dist/images/04.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">MAGICIAN CUSTOM TYPE</h2>
+                    </div>
+
+                    <div class="large-3 cell cell-item text-center">
+                        <a href="#">
+                            <img src="dist/images/05.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">SS GREAT BRITAIN LOGO</h2>
+                    </div>
+
+                    <div class="large-3 cell cell-item text-center">
+                        <a href="#">
+                            <img src="dist/images/04.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">QM MONOGRAM</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div> -->
+
+        <br/>
+        <br/>
+        <div class="grid-container text-center">
+            <p>--- Option 2 ----</p>
+        </div>
+        <br/>
+        <br/>
+
+        <!-- vue template -->
+        <!-- vue - loop -->
+        <!-- https://laracasts.com/discuss/channels/vue/use-v-for-without-wrapping-element -->
+        <template v-for="item in items">
+
+            <div class="row row-flex" data-aos="fade-up">
+                <div class="grid-container">
+                    <div class="grid-x grid-padding-x flex-items">
+
+                        <!-- loop specimens in each item -->
+                        <template v-for="(specimen, index) in item">
+                        <div class="flex-item text-center">
+                            <a href="#">
+                                <img :src="specimen.image_src" :alt="specimen.image_alt">
+                            </a>
+                            <h2 class="heading-specimen">{{ specimen.title }}</h2>
+                        </div>
+                        </template>
+
+                    </div>
+                </div>
+            </div>
+
+        </template>
+        <!-- vue - loop -->
+        <!-- vue template -->
+
+        <!-- without Vue -->
+        <!--
+        <div class="row row-flex" data-aos="fade-up">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x flex-items">
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/03.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">BRYAN VON HOLST LOGO</h2>
+                    </div>
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/04.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">MAGICIAN CUSTOM TYPE</h2>
+                    </div>
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/05.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">SS GREAT BRITAIN LOGO</h2>
+                    </div>
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/04.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">QM MONOGRAM</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-flex" data-aos="fade-up">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x flex-items">
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/00.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">SS GREAT BRITAIN LOGO</h2>
+                    </div>
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/01.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">QM MONOGRAM</h2>
+                    </div>
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/02.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">BRYAN VON HOLST LOGO</h2>
+                    </div>
+
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/03.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">MAGICIAN CUSTOM TYPE</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-flex" data-aos="fade-up">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x flex-items">
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/03.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">BRYAN VON HOLST LOGO</h2>
+                    </div>
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/04.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">MAGICIAN CUSTOM TYPE</h2>
+                    </div>
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/05.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">SS GREAT BRITAIN LOGO</h2>
+                    </div>
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/04.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">QM MONOGRAM</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-flex" data-aos="fade-up">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x flex-items">
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/00.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">SS GREAT BRITAIN LOGO</h2>
+                    </div>
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/01.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">QM MONOGRAM</h2>
+                    </div>
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/02.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">BRYAN VON HOLST LOGO</h2>
+                    </div>
+
+
+                    <div class="flex-item text-center">
+                        <a href="#">
+                            <img src="dist/images/03.png" alt="">
+                        </a>
+                        <h2 class="heading-specimen">MAGICIAN CUSTOM TYPE</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+    <!-- vue template -->
+
+
+    <!-- row grid -->
+    <div class="row row-pagination" data-aos="fade-in">
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <div class="small-12 cell">
+                    <nav class="nav-button float-right">
+                        <a href="#" class="float-right button-arrow-up" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Go Up" data-position="left" data-alignment="center"><i class="icon-arrow-up"></i></a>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- row grid -->
+
+</main>
+
+</body>
+</html>

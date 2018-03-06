@@ -1,0 +1,408 @@
+/**
+ * ===============================================================
+ * Guide.
+ * ===============================================================
+ */
+
+// .row {
+//     border: 2px solid green;
+// }
+
+// .grid-x {
+//     border:1px solid red;
+// }
+
+// .cell {
+//     border: 1px solid blue;
+// }
+
+// .expanded {
+//     border: 1px solid black;
+// }
+
+/**
+ * ===============================================================
+ * Base
+ * ===============================================================
+ */
+
+/**
+ * Variables. 'Open Sans', sans-serif; 'Source Sans Pro', sans-serif;
+ */
+@title-font: 'Vollkorn', serif;
+@body-font: 'Source Sans Pro', sans-serif;
+@sub-font: 'Source Sans Pro', sans-serif;
+@text-font-size: 18px;
+@text-font-size-medium: 16px;
+@text-color: #000000;
+@path-dist-image: "images";
+@path-dist-font: "fonts";
+@path-node-modules: "../../node_modules";
+@grey-xdark: #1d1d1b;
+@grey-dark: #666666;
+@grey-medium: #999999;
+@grey-light: #c6c6c6;
+@grey-xlight: #f8f7f5;
+
+/**
+ * ===============================================================
+ * Dependencies
+ * ===============================================================
+ */
+
+@import 'icons-gm.css';
+@import '@{path-node-modules}/foundation-sites/dist/css/foundation.min.css';
+@import '@{path-node-modules}/foundation-icon-fonts/foundation-icons.css';
+@import '@{path-node-modules}/jquery-ui-bundle/jquery-ui.min.css';
+@import '@{path-node-modules}/swiper/dist/css/swiper.min.css';
+@import '@{path-node-modules}/aos/dist/aos.css';
+
+/**
+ * ===============================================================
+ * HTML/ Global
+ * ===============================================================
+ */
+html,
+body {
+    position: relative;
+}
+
+body {
+    color: @grey-dark;
+    font-family: @body-font;
+    font-size: @text-font-size;
+    letter-spacing: 0.5px;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.overlay-fullsize {
+    .overlayFullsize();
+}
+
+.center-element {
+    .centerElement();
+}
+
+.vertical-center-right {
+    .verticalCenterRight();
+}
+
+.vertical-center-left {
+    .verticalCenterLeft();
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.button-arrow-up {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: @grey-dark;
+    border: none;
+
+    :hover {
+        color: @grey-light;
+    }
+}
+
+/**
+ * Media query
+ * http://foundation.zurb.com/sites/docs/media-queries.html
+ */
+
+/* xxLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 90em) {
+    /**
+     * Change container size on xxlarge screen.
+     */
+    .grid-container {
+        max-width: 85rem;
+    }
+}
+
+/* xLarge and up */
+/* https://foundation.zurb.com/sites/docs/interchange.html */
+@media screen and (min-width: 75em) {
+    //
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+    //
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+    //
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+    .grid-container:not(.full-height) {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    .grid-container:not(.full-height) {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+    //
+}
+
+/**
+ * ===============================================================
+ * Pagination
+ * ===============================================================
+ */
+
+.row-pagination {
+    margin-top: 60px;
+
+    .nav-button {
+        margin-bottom: 25px;
+    }
+}
+
+/**
+ * ===============================================================
+ * row flex/ scale - specimen
+ * ===============================================================
+ */
+
+.row-scale,
+.row-flex {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: @title-font;
+    }
+
+    .heading-specimen {
+        font-size: 14px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+.cell-item {
+    a {
+        background-color: #f2f2f2;
+        width: 100%;
+        display: block;
+    }
+
+    -webkit-transition: width 1s ease;
+    -moz-transition: width 1s ease;
+    transition: width 1s ease;
+
+    &.active {
+        .heading-specimen {
+            color: #ffffff;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: @grey-dark;
+        }
+    }
+}
+
+.flex-items {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-item {
+    a {
+        background-color: #f2f2f2;
+        width: 100%;
+        display: block;
+    }
+
+    padding-right: 15px;
+    padding-left: 15px;
+
+    -webkit-transition: all 2s ease;
+     -moz-transition: all 2s ease;
+      -ms-transition: all 2s ease;
+          transition: all 2s ease;
+
+    -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+
+    &:hover {
+        -webkit-box-flex: 4;
+        -ms-flex-positive: 4;
+        flex-grow: 4;
+
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        transition: all 1s ease;
+
+        .heading-specimen {
+            color: #ffffff;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: @grey-dark;
+        }
+    }
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    .flex-items {
+        flex-direction: column;
+    }
+}
+
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+    .flex-items {
+        flex-direction: column;
+    }
+}
+
+/**
+ * ===============================================================
+ * Others - Material Icons
+ * ===============================================================
+ */
+
+.material-icons {
+    padding: 0;
+    margin: 0;
+
+    &.md-light {
+        color: rgba(255, 255, 255, 1);
+    }
+    &.md-dark-background {
+        // background-color: @grey-xdark
+    }
+    &.md-60 {
+        font-size: 60px;
+    }
+
+    &.fontsize-16 {
+        font-size: 16px;
+        float: right;
+        margin-top: 1px;
+    }
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@{path-dist-font}/MaterialIcons-Regular.eot'); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url('@{path-dist-font}/MaterialIcons-Regular.woff2') format('woff2'),
+    url('@{path-dist-font}/MaterialIcons-Regular.woff') format('woff'),
+    url('@{path-dist-font}/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    // display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+
+    &.md-80 {
+        font-size:80px;
+        line-height: 20px;
+    }
+}
+
+/**
+ * ===============================================================
+ * Customise Foundation font path.
+ * ===============================================================
+ */
+
+@font-face {
+  font-family: "foundation-icons";
+  src: url("@{path-dist-font}/foundation-icons.eot");
+  src: url("@{path-dist-font}/foundation-icons.eot?#iefix") format("embedded-opentype"),
+       url("@{path-dist-font}/foundation-icons.woff") format("woff"),
+       url("@{path-dist-font}/foundation-icons.ttf") format("truetype"),
+       url("@{path-dist-font}/foundation-icons.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/**
+ * ===============================================================
+ * Customise jQuery ui font path.
+ * ===============================================================
+ */
+
+.ui-icon,
+.ui-widget-content .ui-icon {
+    background-image: url("@{path-dist-image}/ui-icons_444444_256x240.png");
+}
+.ui-widget-header .ui-icon {
+    background-image: url("@{path-dist-image}/ui-icons_444444_256x240.png");
+}
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon,
+.ui-button:hover .ui-icon,
+.ui-button:focus .ui-icon {
+    background-image: url("@{path-dist-image}/ui-icons_555555_256x240.png");
+}
+.ui-state-active .ui-icon,
+.ui-button:active .ui-icon {
+    background-image: url("@{path-dist-image}/ui-icons_ffffff_256x240.png");
+}
+.ui-state-highlight .ui-icon,
+.ui-button .ui-state-highlight.ui-icon {
+    background-image: url("@{path-dist-image}/ui-icons_777620_256x240.png");
+}
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+    background-image: url("@{path-dist-image}/ui-icons_cc0000_256x240.png");
+}
+.ui-button .ui-icon {
+    background-image: url("images/ui-icons_777777_256x240.png");
+}
